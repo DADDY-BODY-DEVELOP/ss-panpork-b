@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+@import url("Table.css");
+.btn-icon{
+  /* margin:.5rem auto; */
+  font-size: 20px;
+  display: flex;
+  color: #fff;
+  background-color: #321fdb;
+  border-color: #321fdb;
+}
+/* @import url("header.css");
+@import url("body.css");
+@import url("footer.css");
+@import url("sliderNav.css"); */

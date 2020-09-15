@@ -1,0 +1,31 @@
+.table th,.table td{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.table tbody td{
+  font-size: 15px;
+}
+.table thead .first{
+  width: 2.75rem; 
+}
+.table tbody .first{
+  text-align: right;
+}
+.table tbody td.image{
+  width: 25%;
+}
+.table tbody td img{
+  width: 100%;
+  object-fit: contain
+}
+
+.table tbody td.manager{
+  width: 10%;
+  padding: 0.25rem;
+}
+.table tbody td button{
+  margin:.5rem auto;
+  font-size: 20px;
+  display: flex;
+}
