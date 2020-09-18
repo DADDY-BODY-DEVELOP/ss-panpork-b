@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/scss/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/App.css";
 
 const loading = (
@@ -18,6 +18,7 @@ const Login = React.lazy(() => import("./pages/login/Login"));
 const Register = React.lazy(() => import("./pages/register/Register"));
 const Page404 = React.lazy(() => import("./pages/page404/Page404"));
 const Page500 = React.lazy(() => import("./pages/page500/Page500"));
+const Gallery = React.lazy(() => import("./views/Gallery"));
 
 class App extends Component {
   render() {
@@ -36,6 +37,12 @@ class App extends Component {
               path="/register"
               name="Register Page"
               render={(props) => <Register {...props} />}
+            />
+            <Route
+              exact
+              path="/gallery"
+              name="Gallery"
+              render={(props) => <Gallery {...props} />}
             />
             <Route
               exact

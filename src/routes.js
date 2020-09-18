@@ -60,7 +60,8 @@ const Widgets = React.lazy(() => import("./pages/widgets/Widgets"));
 const Users = React.lazy(() => import("./pages/users/Users"));
 const User = React.lazy(() => import("./pages/users/User"));
 
-const FoodMenu = React.lazy(() => import("./views/FoodMenu"));
+const FoodMenu = React.lazy(() => import("./views/FoodMenu/FoodMenu"));
+const FoodMenuAdd = React.lazy(() => import("./views/FoodMenu/FoodMenuAdd"));
 
 const routes = [
   { path: "/", exact: true, name: "Home" },
@@ -118,10 +119,17 @@ const routes = [
   { path: "/notifications/modals", name: "Modals", component: Modals },
   { path: "/notifications/toaster", name: "Toaster", component: Toaster },
   { path: "/widgets", name: "Widgets", component: Widgets },
+
   { path: "/users", exact: true, name: "Users", component: Users },
   { path: "/users/:id", exact: true, name: "User Details", component: User },
+
   { path: "/foodmenu", exact: true, name: "Food Menu", component: FoodMenu },
-  // { path: "/foodmenu", exact: true, name: "Food Menu", component: FoodMenu },
+  {
+    path: "/foodmenu/add",
+    exact: true,
+    name: "Food Menu Add",
+    component: FoodMenuAdd,
+  },
   // { path: "/foodmenu", exact: true, name: "Food Menu", component: FoodMenu },
   // { path: "/blog", exact: true, name: "Food Menu", component: Blog },
   // { path: "/blog", exact: true, name: "Food Menu", component: Blog },

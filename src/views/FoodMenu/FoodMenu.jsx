@@ -1,39 +1,21 @@
 import React from "react";
-import { Card, Button, Table, Pagination } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Card, Button, Table, Pagination  } from "react-bootstrap";
 import { BiStar, BiEdit, BiTrash, BiAddToQueue } from "react-icons/bi";
-import { FoodMenuTH, FoodMenuTD } from "../pages/users/UsersData";
-import defaultImage from "../assets/img/default.jpg";
-// var FoodMenuTH = [
-//   {
-//     text: "NO.",
-//     css: "first",
-//   },
-//   {
-//     text: "Image",
-//     css: "image",
-//   },
-//   {
-//     text: "NameTH",
-//     css: "name",
-//   },
-//   {
-//     text: "NameEN",
-//     css: "name",
-//   },
-//   {
-//     text: "Manager",
-//     css: "manager",
-//   },
-// ];
+import { FoodMenuTH, FoodMenuTD } from "../../pages/users/UsersData";
+import defaultImage from "../../assets/img/default.jpg";
 
 const FoodMenu = () => {
+  // const [count, setCount] = useState(true);
   return (
     <Card>
       <Card.Header className="d-flex">
         <Card.Title className="m-0 py-2">Food Menu</Card.Title>
-        <Button variant="icon" className="ml-auto py-2">
-          <BiAddToQueue />
-        </Button>
+          <Link className="ml-auto" to="/foodmenu/add">
+            <Button  variant="icon" className="py-2">
+                <BiAddToQueue />
+            </Button>
+          </Link>
       </Card.Header>
       <Card.Body>
         <Table striped bordered hover size="sm">
@@ -50,18 +32,18 @@ const FoodMenu = () => {
           </thead>
           <tbody>
             {FoodMenuTD.map((prop, key) => {
-              console.log(prop);
               return (
                 <tr key={key}>
                   <td className="first">{key + 1}</td>
                   <td className="image">
-                    {/* <img src={defaultImage} alt="" /> */}
-                    <img src={"assets/img/default.jpg"} alt="" />
+                    <img src={defaultImage} alt="" />
                   </td>
                   <td className="name">{prop.nameTH}</td>
                   <td className="name">{prop.nameEN}</td>
                   <td className="manager">
-                    <Button className="star">
+                    <Button variant="outline-dark" active={prop.star}
+                      className="star"
+                    >
                       <BiStar />
                     </Button>
                     <Button className="edit">

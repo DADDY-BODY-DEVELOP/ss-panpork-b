@@ -13,10 +13,11 @@
   text-align: right;
 }
 .table tbody td.image{
-  width: 25%;
+  width: 20%;
 }
 .table tbody td img{
   width: 100%;
+  height: calc(20vh);
   object-fit: contain
 }
 
@@ -25,7 +26,34 @@
   padding: 0.25rem;
 }
 .table tbody td button{
-  margin:.5rem auto;
+  margin:.25rem auto;
   font-size: 20px;
   display: flex;
+}
+.btn-outline-dark:hover {
+  color: #e1d200;
+}
+.btn-outline-dark:not(:disabled):not(.disabled).active{
+  color: #e1d200;
+}
+.edit.btn-primary{
+  color: #ffffff;
+  background-color: #ce8f07dc;
+  border-color:#ffb10a;
+}
+.edit.btn-primary:not(:disabled):not(.disabled):hover{
+  color: #ffffff;
+  background-color: #ce8f07dc;
+  border-color:#ffb10a;
+}
+.trash.btn-primary{
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.trash.btn-primary:not(:disabled):not(.disabled):hover{
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-outline-dark:not(:disabled):not(.disabled).active{
+  color: #e1d200;
 }
