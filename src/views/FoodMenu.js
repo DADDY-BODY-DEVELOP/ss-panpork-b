@@ -3,28 +3,6 @@ import { Card, Button, Table, Pagination } from "react-bootstrap";
 import { BiStar, BiEdit, BiTrash, BiAddToQueue } from "react-icons/bi";
 import { FoodMenuTH, FoodMenuTD } from "../pages/users/UsersData";
 import defaultImage from "../assets/img/default.jpg";
-// var FoodMenuTH = [
-//   {
-//     text: "NO.",
-//     css: "first",
-//   },
-//   {
-//     text: "Image",
-//     css: "image",
-//   },
-//   {
-//     text: "NameTH",
-//     css: "name",
-//   },
-//   {
-//     text: "NameEN",
-//     css: "name",
-//   },
-//   {
-//     text: "Manager",
-//     css: "manager",
-//   },
-// ];
 
 const FoodMenu = () => {
   return (
@@ -55,8 +33,8 @@ const FoodMenu = () => {
                 <tr key={key}>
                   <td className="first">{key + 1}</td>
                   <td className="image">
-                    {/* <img src={defaultImage} alt="" /> */}
-                    <img src={"assets/img/default.jpg"} alt="" />
+                    <img src={defaultImage} alt="" />
+                    {/* <img src={"assets/img/default.jpg"} alt="" /> */}
                   </td>
                   <td className="name">{prop.nameTH}</td>
                   <td className="name">{prop.nameEN}</td>
