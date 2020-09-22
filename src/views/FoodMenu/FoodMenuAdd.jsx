@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Col, Card, Form, Button, Image } from "react-bootstrap";
 import defaultImage from "../../assets/img/default.jpg";
 import CKEditor from 'ckeditor4-react';
@@ -6,7 +6,6 @@ import CKEditor from 'ckeditor4-react';
 
 const FoodMenuAdd = () => {
   // const [count, setCount] = useState(true);
-  const [checked, setChecked] = useState(false);
   return (
     <Card>
       <Card.Header className="d-flex">
@@ -85,10 +84,6 @@ const FoodMenuAdd = () => {
               />
             </Form.Group>
           </Form.Row>
-
-
-          
-
           <Button variant="primary" type="submit">
             Submit
           </Button>

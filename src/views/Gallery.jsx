@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col, Card, Form, Button, Image } from "react-bootstrap";
+import React from 'react';
+import { Row, Col, Card, Button, Image } from "react-bootstrap";
 import { BiX } from 'react-icons/bi';
 import defaultImage from "../assets/img/default.jpg";
 import { GalleryArray } from "../pages/users/UsersData";
@@ -7,7 +7,8 @@ import { GalleryArray } from "../pages/users/UsersData";
 function getUrlParam(paramName) {
   console.log("Test",paramName);
 
-  var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+  // var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+  var reParam = new RegExp('(?:[?&]|&)' + paramName + '=([^&]+)', 'i');
   var match = window.location.href.match(reParam);
 console.log(window.location);
 console.log(match);
@@ -27,7 +28,7 @@ function returnFileUrl(url){
     // --------Get the reference to a dialog window.
     var dialog = this.getDialog();
     // --------Check if this is the Image Properties dialog window.
-    if (dialog.getName() == 'image') {
+    if (dialog.getName() === 'image') {
       // --------Get the reference to a text field that stores the "alt" attribute.
       var element = dialog.getContentElement('info', 'txtAlt');
       // --------Assign the new value.
