@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Card, Button, Table, Pagination  } from "react-bootstrap";
+import { Card, Button, Table, Pagination } from "react-bootstrap";
 import { BiStar, BiEdit, BiTrash, BiAddToQueue } from "react-icons/bi";
 import { FoodMenuTH, FoodMenuTD } from "../../pages/users/UsersData";
 import defaultImage from "../../assets/img/default.jpg";
-
+import { getProduct } from "../../api/product.api";
 const FoodMenu = () => {
-  // const [count, setCount] = useState(true);
+
+  const [foodMenuData, setFoodMenuData] = useState([]);
+
+  useEffect(() => {
+
+    async function runAPI() {
+      setFoodMenuData(await getProduct());
+    }
+
+    runAPI();
+
+  }, [foodMenuData]);
+
+  console.log(foodMenuData)
   return (
     <Card>
       <Card.Header className="d-flex">
         <Card.Title className="m-0 py-2">Food Menu</Card.Title>
-          <Link className="ml-auto" to="/foodmenu/add">
-            <Button  variant="icon" className="py-2">
-                <BiAddToQueue />
-            </Button>
-          </Link>
+        <Link className="ml-auto" to="/foodmenu/add">
+          <Button variant="icon" className="py-2">
+            <BiAddToQueue />
+          </Button>
+        </Link>
       </Card.Header>
       <Card.Body>
         <Table striped bordered hover size="sm">
@@ -41,7 +54,9 @@ const FoodMenu = () => {
                   <td className="name">{prop.nameTH}</td>
                   <td className="name">{prop.nameEN}</td>
                   <td className="manager">
-                    <Button variant="outline-dark" active={prop.star}
+                    <Button
+                      variant="outline-dark"
+                      active={prop.star}
                       className="star"
                     >
                       <BiStar />
